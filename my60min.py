@@ -138,7 +138,7 @@ while(True):
                 sell(coinlist[i])
                 dolpa_120 = False
                 print(coinlist[i], "120 dolpa sold")
-#                 sendMsg = str(coinlist[i]), "< 120 Dolpa Breakout >" 
+#                 sendMsg = str(coinlist[i]), "< 120 Dolpa Sold >" 
 #                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
             time.sleep(0.1)
             
