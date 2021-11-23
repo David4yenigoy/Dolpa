@@ -131,13 +131,13 @@ while(True):
                 # print(coinlist[i], "120 dolpa")
             elif dolpa_120 == True and total < 95000 :
                 buy(coinlist[i])             
-                print(coinlist[i], "120 dolpa buy")
+                print(coinlist[i], "120 dolpa! ")
 #                 sendMsg = str(coinlist[i]), "< 120 Dolpa Breakout >" 
 #                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
             elif now_rsi_60 >= 70 and cur_price >= profit_price :
                 sell(coinlist[i])
                 dolpa_120 = False
-                print(coinlist[i], "120 dolpa sold")
+                print(coinlist[i], "120 dolpa sell !")
 #                 sendMsg = str(coinlist[i]), "< 120 Dolpa Sold >" 
 #                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
             time.sleep(0.1)
