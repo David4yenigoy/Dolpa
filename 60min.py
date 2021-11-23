@@ -124,7 +124,7 @@ while(True):
             total = amount * cur_price
             data_1 = pyupbit.get_ohlcv(ticker=coinlist[i], interval="minute60")
             now_rsi_60 = rsi(data_1, 14).iloc[-1]
-            # print(coinlist[i], datetime.datetime.now(), "< RSI 60 > :", now_rsi_60)
+            print(coinlist[i], datetime.datetime.now(), "< RSI 60 > :", now_rsi_60)
             
             if recent_20_ma60 < recent_120_ma60 and recent_high < recent_120_ma60 and cur_price >= now_120_ma60 :
                 dolpa_120 = True
