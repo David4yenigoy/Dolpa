@@ -130,7 +130,7 @@ while(True):
                 buy(coinlist[i])   
                 dolpa_120 = True
                 print(coinlist[i], "120 dolpa! ")
-#                 sendMsg = str(coinlist[i]), "< 120 Dolpa Breakout >" 
+#                 sendMsg = str(coinlist[i]), "< 120 Dolpa Breakout! >" 
 #                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
                 if dolpa_120 == True and total < 95000
                     dolpa_120 = False
