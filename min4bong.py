@@ -84,9 +84,9 @@ def sell(coin):
     return
 
 
-""" Send MSG""" # Send Msg
-bot = telegram.Bot(token='2110067438:AAF8-6tHX0u2HrrH1wmEgygEsa389gub3n8')
-chat_id = 1860357696
+# """ Send MSG""" # Send Msg
+# bot = telegram.Bot(token='2110067438:AAF8-6tHX0u2HrrH1wmEgygEsa389gub3n8')
+# chat_id = 1860357696
 
 
 # 이용할 코인 리스트 
@@ -105,9 +105,9 @@ for i in range(len(coinlist)):
     dolpa_120.append(False)
 
 # 거래시작
-# access = "access key"   
-# secret = "secret key"   
-# upbit = pyupbit.Upbit(access, secret)
+access = "access key"   
+secret = "secret key"   
+upbit = pyupbit.Upbit(access, secret)
 
 
 while(True):
@@ -132,14 +132,14 @@ while(True):
             elif dolpa_120 == True and total < 95000 :
                 buy(coinlist[i])             
                 print(coinlist[i], datetime.datetime.now(), "120 dolpa buy")
-                sendMsg = str(coinlist[i]), datetime.datetime.now(), "< 120 Dolpa Breakout >" 
-                bot.sendMessage(chat_id=chat_id, text=sendMsg)
+#                 sendMsg = str(coinlist[i]), datetime.datetime.now(), "< 120 Dolpa Breakout >" 
+#                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
             elif now_rsi_60 >= 70 and cur_price >= profit_price :
                 sell(coinlist[i])
                 dolpa_120 = False
                 print(coinlist[i], datetime.datetime.now(), "120 dolpa sold")
-                sendMsg = str(coinlist[i]), datetime.datetime.now(), "< 120 Dolpa Breakout >" 
-                bot.sendMessage(chat_id=chat_id, text=sendMsg)
+#                 sendMsg = str(coinlist[i]), datetime.datetime.now(), "< 120 Dolpa Breakout >" 
+#                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
             time.sleep(0.1)
             
         except Exception as e:
