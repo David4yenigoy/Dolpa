@@ -128,10 +128,10 @@ while(True):
             
             if recent_20_ma60 < recent_120_ma60 and recent_high < recent_120_ma60 and cur_price >= now_120_ma60 :
                 dolpa_120 = True
-                # print(coinlist[i], datetime.datetime.now(), "120 dolpa")
+                # print(coinlist[i], "120 dolpa")
             elif dolpa_120 == True and total < 95000 :
                 buy(coinlist[i])             
-                print(coinlist[i], datetime.datetime.now(), "120 dolpa buy")
+                print(coinlist[i], "120 dolpa buy")
 #                 sendMsg = str(coinlist[i]), "< 120 Dolpa Breakout >" 
 #                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
             elif now_rsi_60 >= 70 and cur_price >= profit_price :
@@ -144,4 +144,4 @@ while(True):
             
         except Exception as e:
             print(e)
-            time.sleep(0.1)    
+            time.sleep(0.1)       
