@@ -68,7 +68,7 @@ def buy(coin):
 
     if money > 50500 : 
         res = upbit.buy_market_order(coin, 50000) 
-        print(coin, datetime.datetime.now(), "120 dolpa buy")
+        print(coin, "120 dolpa buy")
     return
 
     
@@ -80,7 +80,7 @@ def sell(coin):
     
     if total > 5000 : 
         res = upbit.sell_market_order(coin, amount) 
-        print(coin, datetime.datetime.now(), "120 dolpa sold")
+        print(coin, "120 dolpa sold")
     return
 
 
@@ -124,24 +124,24 @@ while(True):
             total = amount * cur_price
             data_1 = pyupbit.get_ohlcv(ticker=coinlist[i], interval="minute60")
             now_rsi_60 = rsi(data_1, 14).iloc[-1]
-            print(coinlist[i], datetime.datetime.now(), "< RSI 60 > :", now_rsi_60)
+            print(coinlist[i], "< RSI 60 > :", now_rsi_60)
             
             if recent_20_ma60 < recent_120_ma60 and recent_high < recent_120_ma60 and cur_price >= now_120_ma60 :
                 dolpa_120 = True
-                # print(coinlist[i], datetime.datetime.now(), "120 dolpa")
+                # print(coinlist[i], "120 dolpa")
             elif dolpa_120 == True and total < 95000 :
                 buy(coinlist[i])             
-                print(coinlist[i], datetime.datetime.now(), "120 dolpa buy")
-#                 sendMsg = str(coinlist[i]), datetime.datetime.now(), "< 120 Dolpa Breakout >" 
+                print(coinlist[i], "120 dolpa buy")
+#                 sendMsg = str(coinlist[i]), "< 120 Dolpa Breakout >" 
 #                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
             elif now_rsi_60 >= 70 and cur_price >= profit_price :
                 sell(coinlist[i])
                 dolpa_120 = False
-                print(coinlist[i], datetime.datetime.now(), "120 dolpa sold")
-#                 sendMsg = str(coinlist[i]), datetime.datetime.now(), "< 120 Dolpa Breakout >" 
+                print(coinlist[i], "120 dolpa sold")
+#                 sendMsg = str(coinlist[i]), "< 120 Dolpa Breakout >" 
 #                 bot.sendMessage(chat_id=chat_id, text=sendMsg)
             time.sleep(0.1)
             
         except Exception as e:
             print(e)
-            time.sleep(0.1)    
+            time.sleep(0.1)         
