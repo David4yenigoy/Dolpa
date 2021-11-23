@@ -126,7 +126,7 @@ while(True):
             now_rsi_60 = rsi(data_1, 14).iloc[-1]
             print(coinlist[i], "< RSI 60 > :", now_rsi_60)
             
-            if dolpa == False and recent_20_ma60 < recent_120_ma60 and recent_high < recent_120_ma60 and cur_price >= now_120_ma60 :
+            if dolpa_120 == False and recent_20_ma60 < recent_120_ma60 and recent_high < recent_120_ma60 and cur_price >= now_120_ma60 :
                 dolpa_120 = True
                 # print(coinlist[i], "120 dolpa")
             elif dolpa_120 == True and total < 95000 :
